@@ -1,0 +1,16 @@
+@use "../abstract" as abs;
+
+.bicon {
+    color: abs.$primary-color;
+    padding-right: 5px;
+}
+
+#center-cube {
+    display: flex;
+    justify-content: space-around;
+    #cube {
+        margin-top: 130px;
+        position: absolute;
+        z-index: 1;
+    }
+}

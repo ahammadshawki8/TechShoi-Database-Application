@@ -1,0 +1,48 @@
+@use "../abstract" as abs;
+
+body {
+    background: url("../images/bg-body.png");
+    color: abs.$secondary-color;
+    font-family: abs.$font-stack;
+}
+
+.change-color {
+    color: abs.$primary-color;
+}
+
+.section-head {
+    padding-top: 60px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: abs.$secondary-color;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: Gotham;
+}
+
+a {
+    text-decoration: none;
+}
+
+.under-link {
+    color: abs.$secondary-color;
+
+    &:hover {
+        text-decoration: underline;
+        color: abs.$secondary-color;
+    }
+}
+
+section {
+    margin-bottom: 200px;
+}
+
+@media screen and (max-width:767px){
+section {
+    margin-bottom: 150px;
+}
+
+.section-head {
+    font-size: 25px;
+}
+}

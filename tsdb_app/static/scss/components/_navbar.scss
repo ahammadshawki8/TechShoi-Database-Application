@@ -1,0 +1,40 @@
+@use "../abstract" as abs;
+
+.navbar {
+    padding-top: 30px;
+    background-color: transparent;
+    
+    .navbar-brand img {
+        width: 220px;
+        margin-right: 70px;
+    }
+
+    .navbar-nav {
+        .nav-link {
+            color: abs.$secondary-color;
+            font-size: 20px;
+            font-weight: lighter;
+            margin-left: 20px;
+            margin-top: 10px;
+
+            &:hover {
+                color: abs.$primary-color;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:991px) {
+    .navbar {
+        .navbar-brand img {
+            width: 150px;
+            margin: 0px;
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 16px;
+        }
+    }
+
+}

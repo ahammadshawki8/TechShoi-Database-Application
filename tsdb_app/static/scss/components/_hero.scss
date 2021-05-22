@@ -1,0 +1,67 @@
+@use "../abstract" as abs;
+
+#hero {
+    margin-top: 90px;
+    display: flex;
+    justify-content: space-between;
+
+    .hero-title {
+        .main-title {
+            margin-top: 40px;
+            max-width: 650px;
+            font-size: 45px;
+            font-weight: bold;
+            line-height: 1.1em;
+        }
+    }
+
+    .hero-image img{
+        width: 400px;
+        border-radius: 0px;
+    }
+
+}
+
+#hi-special {
+    margin-top: -100px;
+}
+
+@media screen and (max-width:991px){
+    #hero {
+        margin-top: 80px;
+        .hero-title {
+            .main-title {
+                margin-top: 0px;
+                font-size: 35px;
+                min-width: 400px;
+            }
+        }
+        .hero-image img{
+            width: 320px;
+        }
+    }
+}
+
+@media screen and (max-width:767px){
+    #hero {
+        margin-top: 55px;
+        display: block;
+        text-align: center;
+
+        .hero-title {
+            .main-title {
+                font-size: 22px;
+                margin-top: 80px;
+                margin-bottom: 40px;
+                min-width: 100px;
+            }
+        }
+        .hero-image img{
+            width: 280px;
+        }
+
+        #hi-special {
+            margin-top: 0px;
+        }
+    }
+}

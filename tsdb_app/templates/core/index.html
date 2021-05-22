@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+    <div class="container">
+        <section id="hero">
+            <div class="hero-title">
+                <h1 class="main-title">Easier <br> Database Management <br> & <span class="change-color">Analytical</span> Support</h1>
+
+            </div>
+            <div class="hero-image">
+                <img src="{% static 'images/main-graphics.svg' %}" alt="main-graphics">
+            </div>
+        </section>
+    </div>
+
+    <section id="application-details">
+        <div class="container">
+            <h1 class="section-head">Application<span class="change-color">Details</span>.</h1>
+            <p class="lead">Maintaining a resourceful database is nowadays crucial for the development of an organization. But only database management isn't sufficient for that purpose. We need to represent them with proper analytics. There is so much going on in the background of such operations. That's why TechShoi took the initiative of creating a database management application that will help them to achieve their goals. This database application is mainly built with Python's Django framework and SQLite database. Some JavaScript code blocks have also been used in this application.</p>
+        </div>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+@use "../abstract" as abs; 
+
+#application-details {
+    height: 500px;
+    background-color: abs.$fourth-color;
+    text-align: center;
+    padding: 40px 160px;
+}
+
+@media screen and (max-width:991px) {
+    #application-details {
+        padding: auto 80px;
+        .container p {
+            font-size: 15px;
+        }
+    }
+}    
+
+
+@media screen and (max-width:767px) {
+    #application-details {
+        height: 550px;
+        padding: 0;
+        .container p {
+            padding: 0;
+            font-size: 15px;
+        }
+    }
+}
