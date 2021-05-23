@@ -1,0 +1,10 @@
+@use "../abstract" as abs; 
+
+.login-form {
+    text-align: center;
+    padding: 100px;
+    padding-top: 70px;
+    background-color: abs.$fourth-color;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}

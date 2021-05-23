@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block body %}
+<div class="login-form">
+    <h1 class="section-head">Please<span class="change-color">Login</span>.</h1>
+    <form action="{% url 'core:user_login' %}" method="post">
+        {% csrf_token %}
+        {{ login_form.as_p }}
+        <input type="submit" value="Login">
+    </form>
+</div>
+{% endblock %}

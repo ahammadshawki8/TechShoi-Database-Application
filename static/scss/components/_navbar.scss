@@ -21,6 +21,9 @@
                 color: abs.$primary-color;
             }
         }
+        .off {
+            display: none;
+        }
     }
 }
 
@@ -32,8 +35,24 @@
             margin: 0px;
         }
 
-        .navbar-nav .nav-link {
-            font-size: 16px;
+        .navbar-nav {
+            .nav-link {
+                font-size: 16px;
+            }
+
+            .off {
+                margin-top: 20px;
+                margin-left: 15px;
+                display: block;
+            }
+        }
+
+        .on {
+            display: none;
+        }
+
+        .navbar-toggler {
+            margin-left: auto;
         }
     }
 

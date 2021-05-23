@@ -10796,6 +10796,10 @@ section {
   color: #0AB210;
 }
 
+.navbar .navbar-nav .off {
+  display: none;
+}
+
 @media screen and (max-width: 991px) {
   .navbar .navbar-brand img {
     width: 150px;
@@ -10805,7 +10809,39 @@ section {
   .navbar .navbar-nav .nav-link {
     font-size: 16px;
   }
+
+  .navbar .navbar-nav .off {
+    margin-top: 20px;
+    margin-left: 15px;
+    display: block;
+  }
+
+  .navbar .on {
+    display: none;
+  }
+
+  .navbar .navbar-toggler {
+    margin-left: auto;
+  }
 }
+.btn-secondary, .btn-primary {
+  font-size: 18px;
+  background-color: #0AB210;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  padding: 5px 20px;
+}
+
+.btn-secondary {
+  background-color: #fff;
+}
+
+.btn-secondary:hover {
+  color: #0AB210;
+}
+
 .bicon {
   color: #0AB210;
   padding-right: 5px;
@@ -10900,7 +10936,6 @@ section {
 }
 @media screen and (max-width: 767px) {
   #application-details {
-    height: 550px;
     padding: 0;
   }
 
@@ -10941,11 +10976,12 @@ footer #social li a {
 }
 
 footer h2, footer .h2 {
-  font-size: 22px;
+  font-size: 20px;
   letter-spacing: 0.2rem;
 }
 
 footer #org-name {
+  margin-top: -10px;
   margin-bottom: 25px;
 }
 
@@ -10973,13 +11009,26 @@ footer #allright {
   }
 
   footer h2, footer .h2 {
-    font-size: 15px;
+    font-size: 13px;
     padding: 0;
     margin: 0;
   }
 
+  footer #org-name {
+    margin-top: -10px;
+    margin-bottom: 20px;
+  }
+
   footer #allright {
-    margin-top: 0;
+    margin-top: 10px;
     margin-bottom: 30px;
   }
+}
+.login-form {
+  text-align: center;
+  padding: 100px;
+  padding-top: 70px;
+  background-color: #f3f3f3;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
