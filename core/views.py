@@ -6,6 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from core import backup
 
 
 
@@ -52,6 +53,7 @@ def analytics(request):
 
 @login_required
 def download_BUF(request):
+    backup.main()
     zip_file = open("BUF.zip", "rb")
     response = HttpResponse(zip_file, content_type="application/force-download")
     response["Content-Disposition"] = f"attachment; filename=BUF.zip"
