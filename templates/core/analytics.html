@@ -1,12 +1,20 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% comment %}
+    This is the analytics.html file. 
+    This file will inherit the basic structure from base.html file.
+    Here you will find some graphs & charts 
+    which will represent the analytics of the TechShoi Database.
+    You can't access this file without log in.
+{% endcomment %}
+
 {% block body %}
     <div class="container">
         <section id="hero">
             <div class="hero-title">
-                <h1 class="main-title">Welcome to <br> TechShoi Database <br> <span class="change-color">Analytics</span></h1>
-
+                <h1 class="main-title">Welcome to <br> TechShoi  <span class="change-color">Database</span> <br>Analytics</h1>
+                <a href="{% url 'core:download_BUF' %}"><button type="button" class="btn btn-primary btn-light" id="hero-btn">Generate & Download BUF</button></a>
             </div>
             <div class="hero-image">
                 <img id="hi-special" src="{% static 'images/analytics-graphics.svg' %}" alt="main-graphics">
@@ -16,8 +24,6 @@
 
     <section id="application-details">
         <div class="container">
-            <br><br><br><br><br><br><br>
-            <p class="lead">This page is currently under constraction :(</p>
         </div>
     </section>
 

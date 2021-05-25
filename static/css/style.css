@@ -10872,13 +10872,17 @@ section {
   line-height: 1.1em;
 }
 
+#hero .hero-title #hero-btn {
+  margin-top: 15px;
+}
+
 #hero .hero-image img {
   width: 400px;
   border-radius: 0px;
 }
 
 #hi-special {
-  margin-top: -100px;
+  margin-top: -50px;
 }
 
 @media screen and (max-width: 991px) {
@@ -10908,6 +10912,12 @@ section {
     margin-top: 80px;
     margin-bottom: 40px;
     min-width: 100px;
+  }
+
+  #hero .hero-title #hero-btn {
+    margin-top: -30px;
+    font-size: 15px;
+    margin-bottom: 30px;
   }
 
   #hero .hero-image img {
@@ -11032,3 +11042,12 @@ footer #allright {
   margin-top: 50px;
   margin-bottom: 100px;
 }
+
+/* 
+This is the main scss file.
+This is used for styling purpose.
+It will generate a large css file with the help of bootstrap
+and its components scss files.
+
+All the components files are powered by the abstract files.
+*/

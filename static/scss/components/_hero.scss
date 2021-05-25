@@ -13,6 +13,10 @@
             font-weight: bold;
             line-height: 1.1em;
         }
+
+        #hero-btn {
+            margin-top: 15px;
+        }
     }
 
     .hero-image img{
@@ -23,7 +27,7 @@
 }
 
 #hi-special {
-    margin-top: -100px;
+    margin-top: -50px;
 }
 
 @media screen and (max-width:991px){
@@ -54,6 +58,12 @@
                 margin-top: 80px;
                 margin-bottom: 40px;
                 min-width: 100px;
+            }
+
+            #hero-btn {
+                margin-top: -30px;
+                font-size: 15px;
+                margin-bottom: 30px;
             }
         }
         .hero-image img{

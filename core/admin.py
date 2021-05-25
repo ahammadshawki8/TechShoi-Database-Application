@@ -1,12 +1,18 @@
+# Importing necessary modules & libraries
 from django.contrib import admin
-from core.models import Tag, FundSource, Organization, Strategy, Initiative, SocialPost, Product, Consumer
 from admin_numeric_filter.admin import NumericFilterModelAdmin, SliderNumericFilter
+from core.models import Tag, FundSource, Organization, Strategy, Initiative, SocialPost, Product, Consumer
 
-# Register your models here.
+
+
+# Changing some features of the admin site
 admin.site.site_header = "Database administration"
 admin.site.site_title = "Database administration"
 admin.site.index_title = "TechShoi"
 
+
+
+# Creating some admin classes for user-friendly Django model access
 class TagAdmin(admin.ModelAdmin):
     list_display = ("value", )
     search_fields = ("value",)
@@ -54,6 +60,7 @@ class ConsumerAdmin(NumericFilterModelAdmin, admin.ModelAdmin):
 
 
 
+# Registering Django models.
 admin.site.register(Tag, TagAdmin)
 admin.site.register(FundSource, FundSourceAdmin)
 admin.site.register(Organization, OrganizationAdmin)

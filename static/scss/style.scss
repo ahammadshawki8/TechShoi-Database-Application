@@ -1,3 +1,12 @@
 // Required Bootstrap SCSS files (@import must)
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "components";
+
+/* 
+This is the main scss file.
+This is used for styling purpose.
+It will generate a large css file with the help of bootstrap
+and its components scss files.
+
+All the components files are powered by the abstract files.
+*/

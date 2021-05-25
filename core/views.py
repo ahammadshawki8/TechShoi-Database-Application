@@ -1,3 +1,4 @@
+# Importing necessary modules & libraries
 from django.shortcuts import render
 from core.forms import LoginForm
 
@@ -6,7 +7,11 @@ from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+
+
+# Creating Django Views.
+# Each URL Paths will be connected to a Django View and 
+# Each Django View will be connected to a html file
 def index(request):
     return render(request, "core/index.html")
 
@@ -43,3 +48,11 @@ def user_logout(request):
 @login_required
 def analytics(request):
     return render(request, "core/analytics.html")
+
+
+@login_required
+def download_BUF(request):
+    zip_file = open("BUF.zip", "rb")
+    response = HttpResponse(zip_file, content_type="application/force-download")
+    response["Content-Disposition"] = f"attachment; filename=BUF.zip"
+    return response

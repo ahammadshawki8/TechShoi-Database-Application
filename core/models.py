@@ -1,9 +1,12 @@
+# Importing necessary modules & libraries
 import uuid
 from django.db import models
 from django.db.models.constraints import CheckConstraint
 from django.db.models.enums import Choices
 
-# Create your models here.
+
+
+# Creating Django Models. Each represent a table.
 class Tag(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, null=False, blank=False)
     value = models.CharField(max_length=50, null=False, blank=False)
@@ -14,7 +17,6 @@ class Tag(models.Model):
     def save(self, *args, **kwargs):
         self.value = self.value.lower()
         return super(Tag, self).save(*args, **kwargs)
-
 
 
 class FundSource(models.Model):
