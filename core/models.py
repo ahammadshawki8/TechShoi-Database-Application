@@ -10,6 +10,11 @@ class Tag(models.Model):
 
     def __str__(self):
         return f"{self.value}"
+    
+    def save(self, *args, **kwargs):
+        self.value = self.value.lower()
+        return super(Tag, self).save(*args, **kwargs)
+
 
 
 class FundSource(models.Model):
@@ -24,8 +29,8 @@ class FundSource(models.Model):
     location = models.CharField(max_length=200, null=False, blank=False)
     email = models.EmailField(unique=True, null=False, blank=False)
     site = models.URLField(unique=True, null=False, blank=False)
-    related_tag = models.ManyToManyField(Tag, related_name="funder_tag", blank=True)
     funding_possibility = models.CharField(max_length=6, choices=FUND_POSSIBLE, default='Medium', null=False, blank=False)
+    related_tag = models.ManyToManyField(Tag, related_name="funder_tag", blank=True)
 
     def __str__(self):
         return f"{self.name} • {self.funding_possibility}"
@@ -50,12 +55,12 @@ class Organization(models.Model):
     category = models.CharField(max_length=10, choices=ORGANIZATION_CATEGORY, default='Neutral', null=False, blank=False)
     email = models.EmailField(unique=True, null=True, blank=True)
     site = models.URLField(unique=True, null=True, blank=True)
-    related_tag = models.ManyToManyField(Tag, related_name="org_tag", blank=True)
     status = models.CharField(max_length=8, choices=ORGANIZATION_STATUS, default='Active', null=False, blank=False)
     funder = models.ManyToManyField(FundSource, related_name="funder", blank=True)
+    related_tag = models.ManyToManyField(Tag, related_name="org_tag", blank=True)
 
     def __str__(self):
-        return f"{self.name} • {self.category} • {self.status}"
+        return f"{self.name} • {self.category}"
 
 
 class Strategy(models.Model):
@@ -91,7 +96,11 @@ class SocialPost(models.Model):
     related_tag = models.ManyToManyField(Tag, related_name="post_tag", blank=True)
 
     def __str__(self):
-        return f"{self.platform} • {self.parent_org}"
+        return f"{self.platform} • {self.parent_org.name}"
+    
+    def save(self, *args, **kwargs):
+        self.platform = self.platform.lower()
+        return super(SocialPost, self).save(*args, **kwargs)
 
 
 class Product(models.Model):
