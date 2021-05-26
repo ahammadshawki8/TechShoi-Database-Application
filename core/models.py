@@ -1,8 +1,6 @@
 # Importing necessary modules & libraries
 import uuid
 from django.db import models
-from django.db.models.constraints import CheckConstraint
-from django.db.models.enums import Choices
 
 
 
@@ -36,6 +34,10 @@ class FundSource(models.Model):
 
     def __str__(self):
         return f"{self.name} • {self.funding_possibility}"
+    
+    def save(self, *args, **kwargs):
+        self.location = self.location.title()
+        return super(FundSource, self).save(*args, **kwargs)
 
 
 class Organization(models.Model):
@@ -63,6 +65,10 @@ class Organization(models.Model):
 
     def __str__(self):
         return f"{self.name} • {self.category}"
+
+    def save(self, *args, **kwargs):
+        self.location = self.location.title()
+        return super(Organization, self).save(*args, **kwargs)
 
 
 class Strategy(models.Model):
@@ -129,3 +135,8 @@ class Consumer(models.Model):
 
     def __str__(self):
         return f"{self.name}"
+
+    def save(self, *args, **kwargs):
+        self.name = self.name.title()
+        self.location = self.location.title()
+        return super(Consumer, self).save(*args, **kwargs)

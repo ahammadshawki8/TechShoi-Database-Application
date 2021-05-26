@@ -14,7 +14,7 @@
         <section id="hero">
             <div class="hero-title">
                 <h1 class="main-title">Welcome to <br> TechShoi  <span class="change-color">Database</span> <br>Analytics</h1>
-                <a href="{% url 'core:download_BUF' %}"><button type="button" class="btn btn-primary btn-light" id="hero-btn">Generate & Download BUF</button></a>
+                <a href="{% url 'core:download_BUF' %}"><button type="button" class="btn btn-primary btn-light" id="hero-btn">Download BackUp Files</button></a>
             </div>
             <div class="hero-image">
                 <img id="hi-special" src="{% static 'images/analytics-graphics.svg' %}" alt="main-graphics">
@@ -22,8 +22,44 @@
         </section>
     </div>
 
-    <section id="application-details">
-        <div class="container">
+    <section id="analytics-details">
+        <div class="analytics-tables">
+            <div class="container">
+                <h1 class="section-head">FundSource<span class="change-color">Analytics</span>.</h1>
+                <img class="analytics-img" src="{% static 'images/plots/plot1.png' %}">
+                <img class="analytics-img" src="{% static 'images/plots/plot2.png' %}">
+            </div>
+        </div>
+
+        <div class="analytics-tables">
+            <div class="container">
+                <h1 class="section-head">Organization<span class="change-color">Analytics</span>.</h1>
+                <img class="analytics-img" src="{% static 'images/plots/plot3.png' %}">
+                <img class="analytics-img" src="{% static 'images/plots/plot4.png' %}">
+                <img class="analytics-img" src="{% static 'images/plots/plot5.png' %}">
+            </div>
+        </div>
+
+        <div class="analytics-tables">
+            <div class="container">
+                <h1 class="section-head">SocialPost<span class="change-color">Analytics</span>.</h1>
+                <img class="analytics-img" src="{% static 'images/plots/plot6.png' %}">
+            </div>
+        </div>
+
+        <div class="analytics-tables">
+            <div class="container">
+                <h1 class="section-head">Product<span class="change-color">Analytics</span>.</h1>
+                <img class="analytics-img" src="{% static 'images/plots/plot7.png' %}">
+            </div>
+        </div>
+
+        <div class="analytics-tables">
+            <div class="container">
+                <h1 class="section-head">Consumer<span class="change-color">Analytics</span>.</h1>
+                <img class="analytics-img" src="{% static 'images/plots/plot8.png' %}">
+                <img class="analytics-img" src="{% static 'images/plots/plot9.png' %}">
+            </div>
         </div>
     </section>
 

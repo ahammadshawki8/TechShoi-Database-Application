@@ -8,3 +8,10 @@
     margin-top: 50px;
     margin-bottom: 100px;
 }
+
+@media screen and (max-width:767px){
+.login-form{
+    padding: 50px;
+    padding-bottom: 100px;
+}
+}

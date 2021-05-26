@@ -10954,6 +10954,31 @@ section {
     font-size: 15px;
   }
 }
+#analytics-details {
+  text-align: center;
+}
+
+#analytics-details .analytics-tables {
+  background-color: #f3f3f3;
+  margin-bottom: 100px;
+  padding-bottom: 50px;
+}
+
+#analytics-details .analytics-tables .analytics-img {
+  margin-bottom: 50px;
+  max-width: 900px;
+}
+
+@media screen and (max-width: 991px) {
+  #analytics-details .analytics-tables .analytics-img {
+    max-width: 700px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #analytics-details .analytics-tables .analytics-img {
+    max-width: 325px;
+  }
+}
 footer {
   text-align: center;
 }
@@ -11043,6 +11068,12 @@ footer #allright {
   margin-bottom: 100px;
 }
 
+@media screen and (max-width: 767px) {
+  .login-form {
+    padding: 50px;
+    padding-bottom: 100px;
+  }
+}
 /* 
 This is the main scss file.
 This is used for styling purpose.

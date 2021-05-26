@@ -50,7 +50,7 @@ class SocialPostAdmin(admin.ModelAdmin):
 class ProductAdmin(admin.ModelAdmin):
     list_display = ("name", "price", "date", "link", "parent_org")
     search_fields = ("name", "features")
-    list_filter = ("price", "date", "parent_org", "related_tag")
+    list_filter = (("price", SliderNumericFilter), "date", "parent_org", "related_tag")
     filter_horizontal = ("related_tag",)
 
 class ConsumerAdmin(NumericFilterModelAdmin, admin.ModelAdmin):

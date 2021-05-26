@@ -7,6 +7,7 @@ from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from core import backup
+from core import analytics as module_analytics
 
 
 
@@ -48,12 +49,12 @@ def user_logout(request):
 
 @login_required
 def analytics(request):
+    module_analytics.main()
     return render(request, "core/analytics.html")
 
 
 @login_required
 def download_BUF(request):
-    backup.main()
     zip_file = open("BUF.zip", "rb")
     response = HttpResponse(zip_file, content_type="application/force-download")
     response["Content-Disposition"] = f"attachment; filename=BUF.zip"

@@ -13,7 +13,7 @@
     <form action="{% url 'core:user_login' %}" method="post">
         {% csrf_token %}
         {{ login_form.as_p }}
-        <input type="submit" value="Login">
+        <input type="submit" value="Submit">
     </form>
 </div>
 {% endblock %}

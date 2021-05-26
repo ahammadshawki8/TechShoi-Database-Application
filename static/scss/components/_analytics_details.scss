@@ -1,0 +1,36 @@
+@use "../abstract" as abs; 
+
+#analytics-details {
+    text-align: center;
+
+    .analytics-tables {
+        background-color: abs.$fourth-color;
+        margin-bottom: 100px;
+        padding-bottom: 50px;
+
+        .analytics-img {
+            margin-bottom: 50px;
+            max-width: 900px;
+        }
+    }
+}
+
+@media screen and (max-width:991px) {
+    #analytics-details {
+        .analytics-tables {    
+            .analytics-img {
+                max-width: 700px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:767px) {
+    #analytics-details {
+        .analytics-tables {    
+            .analytics-img {
+                max-width: 325px;
+            }
+        }
+    }
+}
