@@ -7,7 +7,7 @@ from django.db import models
 # Creating Django Models. Each represent a table.
 class Tag(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, null=False, blank=False)
-    value = models.CharField(max_length=50, null=False, blank=False)
+    value = models.CharField(max_length=50, null=False, blank=False, unique=True)
 
     def __str__(self):
         return f"{self.value}"
@@ -25,7 +25,7 @@ class FundSource(models.Model):
     ]
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, null=False, blank=False)
-    name = models.CharField(max_length=100, null=False, blank=False)
+    name = models.CharField(max_length=100, null=False, blank=False, unique=True)
     location = models.CharField(max_length=200, null=False, blank=False)
     email = models.EmailField(unique=True, null=False, blank=False)
     site = models.URLField(unique=True, null=False, blank=False)
@@ -54,7 +54,7 @@ class Organization(models.Model):
     ]
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, null=False, blank=False)
-    name = models.CharField(max_length=100, null=False, blank=False)
+    name = models.CharField(max_length=100, null=False, blank=False, unique=True)
     location = models.CharField(max_length=200, null=False, blank=False)
     category = models.CharField(max_length=10, choices=ORGANIZATION_CATEGORY, default='Neutral', null=False, blank=False)
     email = models.EmailField(unique=True, null=True, blank=True)
@@ -73,7 +73,7 @@ class Organization(models.Model):
 
 class Strategy(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, null=False, blank=False)
-    name = models.TextField(null=False, blank=False)
+    name = models.TextField(null=False, blank=False, unique=True)
     parent_org = models.ForeignKey(Organization, on_delete=models.PROTECT, related_name="strategy_org", null=True, blank=True)
     related_tag = models.ManyToManyField(Tag, related_name="strategy_tag", blank=True)
 
@@ -83,7 +83,7 @@ class Strategy(models.Model):
 
 class Initiative(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False, null=False, blank=False)
-    name = models.TextField(null=False, blank=False)
+    name = models.TextField(null=False, blank=False, unique=True)
     date = models.DateField(null=True, blank=True)
     link = models.URLField(null=True, blank=True)
     parent_org = models.ForeignKey(Organization, on_delete=models.PROTECT, related_name="initiative_org", null=True, blank=True)

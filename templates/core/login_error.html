@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% comment %}
+    This is the login_error.html file. 
+    This file will inherit the basic structure from base.html file.
+    This will appear if there is any mistake made by the user in the login form.
+{% endcomment %}
+
+
+{% block body %}
+<div class="container">
+    <section id="hero">
+        <div class="hero-title">
+            <h1 class="main-title">{{ headline }}</span></h1>
+        </div>
+        <div class="hero-image">
+            <img id="hi-special" src="{% static 'images/error-graphics.svg' %}" alt="main-graphics">
+        </div>
+    </section>
+</div>
+
+{% endblock %}

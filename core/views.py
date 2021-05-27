@@ -30,10 +30,10 @@ def user_login(request):
                 login(request, user)
                 return HttpResponseRedirect(reverse('core:index'))
             else:
-                return HttpResponse("Account not active!")
+                return render(request, 'core/login_error.html', {"headline": "Account Not Active!"})
         
         else:
-            return HttpResponse("Invalid login details supplied!")
+            return render(request, 'core/login_error.html', {"headline": "Invalid Login Details Supplied!"})
     
     else:
         return render(request, 'core/user_login.html', {
