@@ -47,7 +47,7 @@ class SocialPostAdmin(admin.ModelAdmin):
     list_filter = ("date", "platform", "parent_org", "followed_strategy", "related_tag")
     filter_horizontal = ("followed_strategy", "related_tag")
 
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(NumericFilterModelAdmin, admin.ModelAdmin):
     list_display = ("name", "price", "date", "link", "parent_org")
     search_fields = ("name", "features")
     list_filter = (("price", SliderNumericFilter), "date", "parent_org", "related_tag")
