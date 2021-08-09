@@ -118,7 +118,7 @@ class Product(models.Model):
     date = models.DateField(null=True, blank=True)
     features = models.TextField(null=False, blank=False)
     link = models.URLField(null=False, blank=False)
-    parent_org = models.ForeignKey(Organization, on_delete=models.PROTECT, related_name="product_org", null=False, blank=False)
+    parent_org = models.CharField(max_length=100, null=False, blank=False)
     related_tag = models.ManyToManyField(Tag, related_name="product_tag", blank=False)
 
     def __str__(self):
